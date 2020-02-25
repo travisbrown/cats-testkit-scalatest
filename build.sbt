@@ -36,7 +36,7 @@ lazy val contributors = Seq(
   "ChristopherDavenport" -> "Christopher Davenport"
 )
 
-val catsV = "2.1.0"
+val catsV = "2.1.1"
 val disciplineScalatestVersion = "1.0.1"
 
 // General Settings
@@ -52,7 +52,8 @@ lazy val commonSettings = Seq(
   libraryDependencies ++= Seq(
     "org.typelevel"       %%% "cats-laws"                % catsV,
     "org.typelevel"       %%% "discipline-scalatest"     % disciplineScalatestVersion
-  )
+  ),
+  resolvers += ("staging" at "https://oss.sonatype.org/service/local/repositories/orgtypelevel-1587/content/")
 )
 
 lazy val releaseSettings = {
